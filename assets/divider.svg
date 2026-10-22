@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="30" viewBox="0 0 800 30">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#c77dff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ff9ed2"/>
+      <stop offset="1" stop-color="#c77dff" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      .s{animation:t 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      .s2{animation-delay:.8s}.s3{animation-delay:1.6s}
+      @keyframes t{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+    </style>
+  </defs>
+  <rect x="40" y="14" width="720" height="2" rx="1" fill="url(#g)"/>
+  <path class="s" d="M400 3 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z" fill="#ffe3f1"/>
+  <path class="s s2" d="M340 9 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2z" fill="#e0aaff"/>
+  <path class="s s3" d="M460 9 l2 4 4 2 -4 2 -2 4 -2 -4 -4 -2 4 -2z" fill="#e0aaff"/>
+</svg>
