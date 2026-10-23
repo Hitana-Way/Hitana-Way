@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Hitana"/>
+  <img src="https://raw.githubusercontent.com/Hitana-Way/Hitana-Way/output/banner.svg" width="100%" alt="Hitana"/>
 </p>
 
 <p align="center">
