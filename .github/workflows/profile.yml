@@ -1,4 +1,4 @@
-name: profile (banner + pacman)
+name: profile (banner + contributions)
 
 on:
   schedule:
@@ -14,30 +14,20 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
-      - uses: abozanona/pacman-contribution-graph@main
-        with:
-          github_user_name: ${{ github.repository_owner }}
-
-      - name: recolor pacman to purple
-        run: |
-          sed -i \
-            -e 's/#161b22/#2a1550/Ig' -e 's/#0e4429/#4b2a7b/Ig' -e 's/#006d32/#7b2cbf/Ig' \
-            -e 's/#26a641/#c77dff/Ig' -e 's/#39d353/#e0aaff/Ig' \
-            dist/pacman-contribution-graph-dark.svg
-          sed -i \
-            -e 's/#ebedf0/#f3e8ff/Ig' -e 's/#9be9a8/#e0aaff/Ig' -e 's/#40c463/#c77dff/Ig' \
-            -e 's/#30a14e/#9d4edd/Ig' -e 's/#216e39/#5a189a/Ig' \
-            dist/pacman-contribution-graph.svg
-
-      - name: pick day or night banner
+      - name: build day or night images
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USER: ${{ github.repository_owner }}
         run: |
           hour=$(TZ=America/Sao_Paulo date +%-H)
           if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then mode=day; else mode=night; fi
+          mkdir -p dist
           cp "assets/banner-$mode.svg" dist/banner.svg
+          python3 scripts/contrib_sky.py "$mode" dist/contributions.svg
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
