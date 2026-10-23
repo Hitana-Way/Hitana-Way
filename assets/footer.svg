@@ -16,6 +16,5 @@
   <g class="w">
     <path d="M-50 50 Q100 20 250 50 T550 50 T850 50 T1150 50 T1450 50 V120 H-50Z" fill="url(#f)"/>
   </g>
-  <text x="600" y="98" text-anchor="middle" class="t" font-size="16" fill="#ffe3f1" letter-spacing="3">obrigada pela visita</text>
-  <path class="h" d="M600 62 c-3 -5 -11 -3 -11 3 c0 5 11 11 11 11 s11 -6 11 -11 c0 -6 -8 -8 -11 -3z" fill="#ff9ed2"/>
+  <path class="h" d="M600 80 c-3 -5 -11 -3 -11 3 c0 5 11 11 11 11 s11 -6 11 -11 c0 -6 -8 -8 -11 -3z" fill="#ff9ed2"/>
 </svg>
